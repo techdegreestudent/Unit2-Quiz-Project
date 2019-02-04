@@ -115,7 +115,7 @@ var useThisRandomQuestion : [[String : String]] = []
 func generateRandomQuestion() -> [[String : String]] {
     
     newQuestionArray.shuffle()
-    useThisRandomQuestion.append(newQuestionArray[0])
+    useThisRandomQuestion.insert(newQuestionArray[0], at: 0)
     newQuestionArray.remove(at: 0)
     return useThisRandomQuestion
 }
@@ -125,5 +125,6 @@ func generateRandomQuestion() -> [[String : String]] {
 /* This function resets the questions intance to play again*/
 func restartGame() {
     newQuestionArray = QuestionProvider().questions
+
     return
 }
